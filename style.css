@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 body{
-    background-color: aqua;
+    background-color: burlywood;
 }
 *{
     margin: 0;
@@ -9,15 +9,15 @@ body{
 
 }
 nav{
-    font-family: 'Oswald', 'sans-serif';
+    font-family: 'Oswald', sans-serif;
 }
 nav ul {
     display: flex;
     align-items: center;
     list-style-type: none;
-    height: 65px;
-    background-color: black;
-    color: aliceblue;
+    height: 50px;
+    background-color: rgb(35, 31, 31);
+    color: rgb(255, 255, 255);
 }
 nav ul li{
     padding: 0 12px;
@@ -27,19 +27,29 @@ nav ul li{
     display: flex;
     align-items: center;
     font-size: 1.3rem;
-    font-weight: bolder;
 }
 .brand img{
     padding: 0 7px;
-    width: 44px;
+    width: 40px;
 }
 .container{
-    min-height: 70vh;
+    min-height: 63.3vh;
+    background-color: rgb(35, 31, 31);
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    width: 70%;
+    margin: 23px auto;
+    border-radius: 12px;
+    padding: 30px;
+    background-image: url("background.avif");
+    background-size: cover;
+    background-position: center;
 }
 .bottom{
     position: sticky;
-    height: 130px;
-    background-color: black;
+    height: 100px;
+    background-color: rgb(35, 31, 31);
     color: white;
     bottom: 0;
     display: flex;
@@ -55,4 +65,38 @@ nav ul li{
 }
 #myProgeressBar{
     width: 80vw;
+    cursor: pointer;
+}
+.songItem{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+}
+.songItem img{
+    width: 43px;
+    margin: 0px 50px 0px 25px;
+    border-radius: 34px;
+}
+.timestamp{
+    margin: 0 20px;
+}
+
+.timestamp i{
+    cursor: pointer;
+}
+
+.songInfo{
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img{
+    opacity: 0;
+    transition: opacity is ease-in;
 }
