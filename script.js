@@ -5,6 +5,7 @@ let myProgressBar = document.getElementById('myProgressBar')
 let masterSongName = document.getElementById('masterSongName')
 let gif = document.getElementById('gif')
 let songItem = Array.from(document.getElementsByClassName('songItem'));
+let temp=0;
 
 let songs = [
     {songName:"TVARI - Tokyo Cafe", filePath:"11.mp3" , coverPath: "1.jpg",songTime: '02:33'},
@@ -28,9 +29,19 @@ masterPlay.addEventListener('click' , () => {
         audioElement.play();
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
+        Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+            if(element.id==temp){
+                element.classList.remove('fa-play-circle')
+                element.classList.add('fa-pause-circle')
+            }
+        })
         gif.style.opacity =1;
     }  
     else{
+        Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+            element.classList.remove('fa-pause-circle')
+            element.classList.add('fa-play-circle')
+        })
         audioElement.pause();
         masterPlay.classList.remove('fa-pause-circle');
         masterPlay.classList.add('fa-play-circle');
@@ -70,6 +81,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
             audioElement.src = `${(songIndex+1) * 11}.mp3`
             masterSongName.innerText = songs[songIndex].songName;
             audioElement.play();
+            temp=element.id
             gif.style.opacity =1;
             masterPlay.classList.remove('fa-play-circle');
             masterPlay.classList.add('fa-pause-circle');
@@ -78,7 +90,18 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
 })
 
 document.getElementById('next').addEventListener('click',()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-pause-circle')
+        element.classList.add('fa-play-circle')
+    })
     songIndex = (songIndex+1)%7;
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        if(element.id==songIndex){
+            element.classList.remove('fa-play-circle')
+            element.classList.add('fa-pause-circle')
+        }
+    })
+    temp=songIndex
     audioElement.src = `${(songIndex+1) * 11}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.cuurentTime = 0;
@@ -90,11 +113,22 @@ document.getElementById('next').addEventListener('click',()=>{
 })
 
 document.getElementById('previous').addEventListener('click',()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-pause-circle')
+        element.classList.add('fa-play-circle')
+    })
     if(songIndex<=0){
         songIndex=0
     }else{
         songIndex-=1;
     }
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        if(element.id==songIndex){
+            element.classList.remove('fa-play-circle')
+            element.classList.add('fa-pause-circle')
+        }
+    })
+    temp=songIndex
     audioElement.src = `${(songIndex+1) * 11}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.cuurentTime = 0;
