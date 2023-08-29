@@ -79,7 +79,7 @@ nav ul li{
 }
 .songItem img{
     width: 43px;
-    margin: 0px 50px 0px 25px;
+    margin: 0px 50px 0px 5px;
     border-radius: 34px;
 }
 .timestamp{
@@ -93,7 +93,18 @@ nav ul li{
 .songInfo{
     position: absolute;
     left: 10vw;
+    top: 40px;
     font-family: 'Varela Round', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+#masterSongName{
+    padding: 5px;
+}
+
+.timeduration{
+    padding: 0 3px 0 0 ;
 }
 
 .songInfo img{
