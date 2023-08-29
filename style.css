@@ -8,7 +8,51 @@ body{
     padding: 0;
 
 }
+nav{
+    font-family: 'Oswald', 'sans-serif';
+}
 nav ul {
-    
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: aliceblue;
+}
+nav ul li{
+    padding: 0 12px;
 
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+.brand img{
+    padding: 0 7px;
+    width: 44px;
+}
+.container{
+    min-height: 70vh;
+}
+.bottom{
+    position: sticky;
+    height: 130px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.icons{
+    margin-top: 13px;
+}
+.icons i{
+    cursor: pointer;
+}
+#myProgeressBar{
+    width: 80vw;
 }
